@@ -80,17 +80,3 @@ Express intent  ->  Get output  ->  Correct  ->  Save correction as memory/skill
 ```
 
 The people who get the most from AI aren't better at prompting. They've built better intent infrastructure. Their corrections compound. Their CLAUDE.md captures their thinking style. Their skills shape the AI's cognition. Eventually, they express raw intent and get excellent output because the system has learned what they mean, not just what they said.
-
-## Common Intent Failures
-
-**Over-specifying.** You've done the thinking and you're dictating the answer. The AI becomes a typist. Leave room for it to solve the actual problem.
-
-**Under-specifying without context.** "Make it better" without saying better how. The intent is incomplete, not the prompt. Add the dimension: faster, cleaner, shorter, more persuasive, more specific.
-
-**Not sharing ambient context.** The AI doesn't know this is for your boss, that you're in a hurry, that you hate bullet points, that the audience is 50-year-old PE millionaires. Context is intent.
-
-**Treating corrections as failures.** The first output being wrong isn't a problem. It's a data point. The correction is more valuable than the original output because it reveals what you actually wanted.
-
-## The Bar
-
-When you can think out loud, in unstructured speech, about a complex problem, and the AI produces output that makes you say "yeah, that's what I was thinking but couldn't articulate yet," the intent infrastructure is working. That's the bar. Everything in this repo is designed to get you there.
