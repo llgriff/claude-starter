@@ -57,13 +57,12 @@ These are state modifiers, not prompts. They change HOW Claude thinks, not WHAT 
 2. "Help me brainstorm names for my startup"
 3. Output arrives with wider aperture, unexpected connections, voice
 
-### Guides (reference)
+### Guides (read these)
 
 | Guide | What It Covers |
 |-------|---------------|
-| `intent.md` | How to express what you want (the skill nobody teaches) |
-| `working-with-ai.md` | Mental models: planning, feedback flywheel, skills, commands, hooks, memory |
-| `mcp-servers.md` | What MCP servers are, which ones matter, how to connect |
+| `intent.md` | Intent is not a prompt. How to match your approach to the shape of the problem. The intent infrastructure concept. |
+| `working-with-ai.md` | The mental models: planning vs doing, the feedback flywheel, skills, commands, hooks, memory, CLAUDE.md, and the progression from week 1 to month 3. |
 
 ## The Idea
 
