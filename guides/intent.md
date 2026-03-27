@@ -1,82 +1,83 @@
-# Intent: The Only Thing That Matters
+# Intent
 
-You don't need to write good prompts. You need to know what you want and be able to say it, even imperfectly. The AI's job is to parse your intent, not your grammar.
+How you express what you want determines what you get. This isn't about prompt engineering. It's about thinking clearly about the shape of your problem and communicating it in a way that lets AI actually help.
 
-This guide is about building the muscle of expressing intent clearly and building systems that help you discover and refine your intent over time.
+## Match Your Approach to the Problem
 
-## Intent Is Not a Prompt
-
-A prompt is a transaction. You write something, you get something back. Intent is a relationship. You express direction, the AI figures out the path, you course-correct, and the system gets better at understanding you.
-
-Match the shape of your request to the shape of the problem.
+Different problems want different kinds of requests.
 
 **The problem is clear:** "Write a function that filters even numbers from a list and sums them."
-You've already decomposed the problem. You know the shape of the solution. Just say it. Fast, clean, done.
+You've decomposed it. You know the shape. Say it, get it, move on.
 
 **The outcome is clear, the path isn't:** "I need to process a list of numbers and pull out a specific subset. The subset rule might change later."
-You know where you're going but you want the AI's judgment on how to get there. Leave room for it to make implementation decisions you might not have thought of.
+You're giving the AI room to make implementation decisions. You might get something better than what you would have specified.
 
 **Something is wrong but you're not sure what:** "I'm building a data pipeline and I keep writing the same filtering logic everywhere. Fix that."
-You're pointing at a smell, not a solution. This is where AI adds the most value: it can see patterns across your whole codebase that you can't hold in your head at once.
+You're pointing at a smell. The AI can see patterns across your whole codebase that you can't hold in your head at once. This is where the leverage lives.
 
-None of these is better than the others. They're different tools for different situations. The mistake is using only one. Most people default to the first (dictating the solution) and miss the leverage of the second and third (letting the AI solve the bigger problem).
+All of these are valid. The skill is knowing which one fits the moment.
 
 ## Thinking Out Loud Is Valid
 
-You don't need to have your thoughts organized before you speak. Speech-to-text, stream of consciousness, half-formed ideas, "I don't know exactly what I want but it's something like..." are all valid inputs.
+You don't need organized thoughts before you speak. Stream of consciousness, half-formed ideas, "I don't know exactly what I want but it's something like..." are all fine. The AI handles messy input well. Stop polishing your requests and start iterating on the outputs.
 
-If you say "I kind of want to, you know, make the thing that does the stuff with the users, like maybe a dashboard or something?" a well-set-up AI will hear "user-facing view" and start asking what data matters to you.
+## The Craft: How Beer and Zyn Express Intent
 
-The thing that actually holds people back isn't the AI misunderstanding them. It's self-censoring. Spending five minutes crafting the perfect request when you could have just said the messy version and been done. The AI handles messy fine. Stop polishing your inputs and start iterating on the outputs.
+Look at the `/beer` and `/zyn` skills in this repo. They're examples of intent expression at a high level.
 
-## The Discovery Problem
+The intent behind `/beer` is simple: "I need you to be creative." But saying "be creative" doesn't actually change anything. It's too vague to act on. So the skill expresses that intent with specificity and structure:
 
-Most people's biggest problem isn't expressing intent. It's knowing what they want in the first place. That's why `/start` exists. It's an intent discovery mechanism.
+- It describes a *state* (the aperture widens, the inner editor steps back, threads get followed)
+- It defines *behaviors* (question the frame, find your voice, let things collide)
+- It sets *boundaries* (one beer, not ten: loose, not sloppy)
+- It includes *self-checks* (did I go somewhere interesting or stay on the rails?)
 
-The pattern:
-1. Start with what's concrete: what's tedious, what tools you use, what you wish was different
-2. Let the AI reflect back what it heard: "So it sounds like you want X. Is that right?"
-3. Iterate: "Not exactly. More like Y." That correction IS the intent emerging.
-4. Do something concrete immediately. The output reveals whether the intent was understood.
-5. Correct again. Each correction sharpens the intent.
+The intent behind `/zyn` is "I need you to focus." Same problem: too vague on its own. So it does the same thing from the opposite direction:
 
-You often don't know what you want until you see what you don't want. That's not a failure of communication. That's how intent works. Build systems that support this process instead of demanding clarity upfront.
+- State: the aperture narrows, conviction goes up, filler becomes uncomfortable
+- Behaviors: see the real target, name what excellent looks like, see your failure modes
+- Boundaries: alert, not anxious; precise, not overwrought
+- Self-checks: did I hit the target or a target nearby?
 
-## Levels of Intent
+The craft is in the balance. Both skills are specific enough to actually change behavior but open enough to apply to any task. They don't tell the AI what to produce. They tell the AI how to think while producing it. That's the difference between a prompt template and an intent expression.
 
-**Direct intent:** "Rename this function to X." You know exactly what you want. The AI executes.
+You can build skills like this for any mode you work in. A "deep research" mode. A "explain it to a non-technical person" mode. A "I'm debugging and I need hypotheses, not solutions" mode. The pattern is the same: describe the state, define the behaviors, set boundaries, include self-checks.
 
-**Outcome intent:** "This is slow. Fix it." You know the outcome. The AI figures out the path.
+## Intent Layers
 
-**Exploratory intent:** "I'm building a task manager. I'm not sure about the data model." You're thinking. The AI thinks with you. It should match your energy: if you're exploring, it explores. If you're deciding, it decides.
+Your intent operates at multiple levels simultaneously.
 
-**Ambient intent:** "I'm running a turnaround consulting business and I need operational intelligence infrastructure." This is who you are and what you're building. It shapes everything. This is what goes in your CLAUDE.md and your memory: the persistent context that every conversation inherits.
+**This request:** "Rename this function." Direct. The AI executes.
 
-Most AI interactions operate at direct intent. The real power is at outcome and exploratory levels. Ambient intent is what makes the AI genuinely yours.
+**This session:** "I'm refactoring the auth module." Shapes how the AI interprets every request in the conversation.
+
+**This project:** "I'm building a task manager in TypeScript." Lives in your project-level CLAUDE.md. Every conversation inherits it.
+
+**This is who I am:** "I'm a backend engineer who thinks in systems, prefers explicit over clever, and hates unnecessary abstractions." Lives in your global CLAUDE.md and memory. Shapes everything.
+
+Most people only express the first layer. The more layers you fill in, the less you have to say in each request, because the AI already knows the context.
 
 ## Building Intent Infrastructure
 
-The whole point of skills, commands, memory, and CLAUDE.md is to build infrastructure for your intent. Not to write better prompts. To make the AI understand you so well that your raw, unedited, half-formed thoughts produce excellent output.
+Skills, commands, memory, and CLAUDE.md are all infrastructure for expressing intent. Each one captures a different layer:
 
-**CLAUDE.md = ambient intent.** Who you are, how you think, what matters, what to avoid. Loads into every conversation. The AI starts with your context instead of starting from zero.
+**CLAUDE.md** captures who you are and how you work. It's the ambient context that every conversation starts with.
 
-**Memory = accumulated intent.** Every correction, every preference, every "always do X, never do Y" adds to the picture. Over time the corrections decrease because the AI already knows.
+**Memory** captures accumulated preferences and corrections. Each "always do X, never do Y" sharpens the picture.
 
-**Skills = intent modes.** `/beer` doesn't say "be creative." It restructures how the AI thinks so your creative intent produces better creative output. `/zyn` restructures for precision. You can build skills for any mode your intent regularly takes.
+**Skills** capture thinking modes. When you need creativity, focus, rigor, empathy, or any other cognitive shape, a skill expresses that intent once and applies it every time.
 
-**Commands = intent patterns.** `/start` is a pattern for "I have a new person who doesn't know what they want yet." `/level-up` is a pattern for "I've been working for a week, what should evolve?" When you notice yourself expressing the same kind of intent repeatedly, capture the pattern.
+**Commands** capture workflow patterns. When you notice yourself expressing the same sequence of intent repeatedly, a command captures it.
 
-**This repo = an intent discovery machine.** The whole thing is designed to extract your intent progressively, from "I don't know what I want" to "my AI knows me so well I can think out loud and it does the right thing."
+## The Flywheel
 
-## The Correction Flywheel
-
-Every correction you make is intent data. When you say "too formal, make it casual," you've just expressed a preference that applies to every future interaction if you let it.
+Every correction you make is intent data.
 
 ```
-Express intent  ->  Get output  ->  Correct  ->  Save correction as memory/skill
-     ^                                                         |
-     |                                                         v
-     +------ Next time, intent is understood better -----------+
+Express intent  ->  Get output  ->  Correct  ->  Save as memory/skill
+     ^                                                      |
+     |                                                      v
+     +--------- Next time, intent understood better --------+
 ```
 
-The people who get the most from AI aren't better at prompting. They've built better intent infrastructure. Their corrections compound. Their CLAUDE.md captures their thinking style. Their skills shape the AI's cognition. Eventually, they express raw intent and get excellent output because the system has learned what they mean, not just what they said.
+The people who get the most from AI aren't better at articulating what they want. They've built systems that understand what they mean. Their corrections compound. Eventually, raw unpolished intent produces excellent output because the infrastructure fills in what wasn't said.
