@@ -8,24 +8,26 @@ This guide is about building the muscle of expressing intent clearly and buildin
 
 A prompt is a transaction. You write something, you get something back. Intent is a relationship. You express direction, the AI figures out the path, you course-correct, and the system gets better at understanding you.
 
-Bad: "Write a Python function that takes a list of integers and returns the sum of all even numbers."
-Fine, but you've done the AI's job for it. You figured out the implementation and dictated it.
+Match the shape of your request to the shape of the problem.
 
-Better: "I need to process a list of numbers and pull out a specific subset. The subset rule might change later."
-Now the AI is solving the actual problem, not transcribing your solution.
+**The problem is clear:** "Write a function that filters even numbers from a list and sums them."
+You've already decomposed the problem. You know the shape of the solution. Just say it. Fast, clean, done.
 
-Best: "I'm building a data pipeline and I keep writing the same filtering logic everywhere. Fix that."
-Now the AI is solving the real problem: your architecture has a pattern that wants to be abstracted.
+**The outcome is clear, the path isn't:** "I need to process a list of numbers and pull out a specific subset. The subset rule might change later."
+You know where you're going but you want the AI's judgment on how to get there. Leave room for it to make implementation decisions you might not have thought of.
 
-The deeper your intent, the more the AI can actually help. Surface-level intent gets surface-level output.
+**Something is wrong but you're not sure what:** "I'm building a data pipeline and I keep writing the same filtering logic everywhere. Fix that."
+You're pointing at a smell, not a solution. This is where AI adds the most value: it can see patterns across your whole codebase that you can't hold in your head at once.
+
+None of these is better than the others. They're different tools for different situations. The mistake is using only one. Most people default to the first (dictating the solution) and miss the leverage of the second and third (letting the AI solve the bigger problem).
 
 ## Thinking Out Loud Is Valid
 
 You don't need to have your thoughts organized before you speak. Speech-to-text, stream of consciousness, half-formed ideas, "I don't know exactly what I want but it's something like..." are all valid inputs.
 
-The AI should parse for intent, not phrasing. If you say "I kind of want to, you know, make the thing that does the stuff with the users, like maybe a dashboard or something?" the AI should hear: "I want to build a user-facing view. Let me ask what data matters to you." Not: "I don't understand your request, could you be more specific?"
+If you say "I kind of want to, you know, make the thing that does the stuff with the users, like maybe a dashboard or something?" a well-set-up AI will hear "user-facing view" and start asking what data matters to you.
 
-If your AI asks you to rephrase, the AI is broken, not your input.
+The thing that actually holds people back isn't the AI misunderstanding them. It's self-censoring. Spending five minutes crafting the perfect request when you could have just said the messy version and been done. The AI handles messy fine. Stop polishing your inputs and start iterating on the outputs.
 
 ## The Discovery Problem
 
