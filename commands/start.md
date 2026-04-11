@@ -1,5 +1,7 @@
 First-run setup. Discover what the user wants to do and build their environment around it.
 
+Voice input is encouraged throughout. Mac: Fn+Fn for dictation. Windows: Win+H. People are more expressive speaking than typing.
+
 ## Process
 
 ### 1. Check if already set up
@@ -7,19 +9,19 @@ If `profile.md` exists in the repo root, read it and say: "I've got your profile
 
 ### 2. Discovery (5 minutes, conversational)
 
-Ask these questions one at a time. Be conversational, not interrogative.
+Ask these questions one at a time. Wait for a response before moving on. Be warm and conversational, not interrogative. The user may be brand new to AI tools. Don't assume technical fluency. Match their energy and vocabulary.
 
 **Q1: "What do you do?"**
-Not their job title. What they actually spend their time on. Developer? Designer? PM? Student? Side-project builder? Running a business? Just curious about AI?
+Not their job title. What they actually spend their time on. If they say something broad like "I manage stuff," gently probe: "Like what kind of stuff? Walk me through yesterday." The specifics are where the value lives.
 
 **Q2: "What's tedious?"**
-What do they do repeatedly that feels like it should be easier? This is where the value lives. Examples to prompt if they're stuck: "Do you write a lot of emails? Manage tasks? Review code? Research things? Write docs? Organize files?"
+What do they do repeatedly that feels like it should be easier? This is where the value lives. Examples to prompt if they're stuck: "Do you write a lot of emails? Manage tasks? Research things? Keep track of people? Write docs? Organize files? Plan events?"
 
 **Q3: "What tools do you live in?"**
-Which apps/services are open on their screen right now? Gmail, Slack, Linear, Notion, Figma, GitHub, Google Calendar, VS Code, Terminal? This maps to MCP connections.
+Which apps/services are open on their screen right now? Gmail, Slack, Notion, Google Calendar, VS Code, Notes, Messages, Safari? This maps to MCP connections. For non-technical users, focus on the apps they actually use, not developer tools.
 
 **Q4: "If AI could do one thing for you this week, what would it be?"**
-The concrete thing. Not "be more productive." Something specific like "help me write this proposal" or "organize my notes" or "build a side project I've been putting off."
+The concrete thing. Not "be more productive." Something specific like "help me write this email" or "organize my notes" or "plan this event" or "research something I've been meaning to look into."
 
 ### 3. Scan for MCP opportunities
 
@@ -84,29 +86,27 @@ The goal: in 10 minutes from clone, they've seen AI do something genuinely usefu
 
 ### 6. Explain what just happened
 
-After the useful thing, briefly explain the concepts they just used:
-- "That was me working from your profile (context). The more context I have, the better I get."
-- "Try `/beer` before your next brainstorming session. It changes how I think."
-- "If you want me to remember something across conversations, just tell me to remember it."
-- "When you notice me doing something you want me to always do, that can become a skill or a hook."
+After the useful thing, briefly note what happened. Don't lecture. One or two sentences max:
+- "I worked from what you told me about yourself. The more I know, the more useful I get."
+- "That thing I just did? You can ask me to do that anytime. You can also teach me new tricks."
 
-### 7. Point them forward
+### 7. Install globally
 
-"You're set up. Here's what to try next:"
-- `/beer` or `/zyn` before your next task (experience state-modifier skills)
-- `/connect` if you want to wire up more tools
-- `/level-up` in a week (I'll look at how you've been working and suggest what to add next)
-- Just... use me. Ask me to do things. The more you use me, the more patterns emerge that we can turn into skills.
+Don't ask about global vs local. Just install globally. Most users want these everywhere.
 
-### 8. Setup path
-
-Ask: "Do you want these skills and commands available in every project, or just this one?"
-
-- **Every project (global)**: Copy commands and skills to `~/.claude/commands/` and `~/.claude/skills/`
-- **Just this project**: Leave them in the repo. They'll work when you open Claude Code in this directory.
-
-If global, run the copy:
 ```bash
+mkdir -p ~/.claude/commands ~/.claude/skills
 cp commands/*.md ~/.claude/commands/ 2>/dev/null
 cp skills/*.md ~/.claude/skills/ 2>/dev/null
 ```
+
+Tell them: "I've set up your skills so they work everywhere, not just in this folder."
+
+### 8. Point them forward
+
+Keep it to three things. Don't overwhelm.
+
+"You're set up. Three things to know:"
+1. You can talk to me in any project folder. Just type `claude` in your terminal.
+2. Try `/beer` before brainstorming something. It changes how I think.
+3. Just use me. Ask me to do things. The more we work together, the better I get at helping you specifically.
